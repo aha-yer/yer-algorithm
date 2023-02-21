@@ -1,0 +1,20 @@
+{
+  "name": "alge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aha-yer/yer-algorithm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aha-yer/yer-algorithm/issues"
+  },
+  "homepage": "https://github.com/aha-yer/yer-algorithm#readme"
+}
