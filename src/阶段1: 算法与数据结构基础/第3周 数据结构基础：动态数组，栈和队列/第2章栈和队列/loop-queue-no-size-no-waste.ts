@@ -2,7 +2,7 @@
  * @Author: yer
  * @Date: 2023-02-23 17:34:35
  * @LastEditors: yer
- * @LastEditTime: 2023-02-23 17:53:43
+ * @LastEditTime: 2023-02-23 19:43:07
  * @FilePath: /alge/src/阶段1: 算法与数据结构基础/第3周 数据结构基础：动态数组，栈和队列/第2章栈和队列/loop-queue-no-size-no-waste.ts
  * @Description:
  *
@@ -16,7 +16,7 @@
 
 import { QueueType } from "./queue";
 
-class LoopQueueNoSize<E> implements QueueType<E> {
+export class LoopQueueNoSizeNoWaste<E> implements QueueType<E> {
   private array: (E | undefined)[];
   private front: number;
   private tail: number;
@@ -57,6 +57,10 @@ class LoopQueueNoSize<E> implements QueueType<E> {
     return this.tail - this.front;
   }
 
+  getCapacity(): number {
+    return this.array.length;
+  }
+
   isEmpty(): boolean {
     return this.tail === this.front;
   }
@@ -74,18 +78,18 @@ class LoopQueueNoSize<E> implements QueueType<E> {
   }
 }
 
-const lq = new LoopQueueNoSize(4);
-lq.enqueue(1);
-lq.enqueue(2);
-lq.enqueue(3);
-lq.enqueue(4);
-lq.dequeue();
+// const lq = new LoopQueueNoSizeNoWaste(4);
+// lq.enqueue(1);
+// lq.enqueue(2);
+// lq.enqueue(3);
+// lq.enqueue(4);
 // lq.dequeue();
-lq.enqueue(5);
-// lq.enqueue(6);
-lq.dequeue();
-// lq.enqueue(7);
-// lq.enqueue(8);
-// lq.enqueue(9);
+// // lq.dequeue();
+// lq.enqueue(5);
+// // lq.enqueue(6);
 // lq.dequeue();
-console.log(lq);
+// // lq.enqueue(7);
+// // lq.enqueue(8);
+// // lq.enqueue(9);
+// // lq.dequeue();
+// console.log(lq);

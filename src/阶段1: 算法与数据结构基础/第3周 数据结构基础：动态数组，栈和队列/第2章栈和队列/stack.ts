@@ -2,13 +2,13 @@
  * @Author: yer
  * @Date: 2023-02-22 15:50:40
  * @LastEditors: yer
- * @LastEditTime: 2023-02-22 22:11:39
+ * @LastEditTime: 2023-02-23 19:58:07
  * @FilePath: /alge/src/阶段1: 算法与数据结构基础/第3周 数据结构基础：动态数组，栈和队列/第2章栈和队列/stack.ts
  * @Description:
  *
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
  */
-interface StackInterface<E> {
+export interface StackInterface<E> {
   push(val: E): void;
   pop(): E;
   peek(): E;
@@ -17,21 +17,28 @@ interface StackInterface<E> {
 
 export class ArrayStack<E> implements StackInterface<E> {
   private stack: E[];
-  private rearIndex: number;
+
   constructor() {
     this.stack = [];
-    this.rearIndex = -1;
   }
+
   push(val: E): void {
-    this.stack[++this.rearIndex] = val;
+    this.stack.push(val);
   }
+
   pop(): E {
-    return this.stack[this.rearIndex--];
+    return this.stack.pop();
   }
+
   peek(): E {
-    return this.stack[this.rearIndex];
+    return this.stack[this.stack.length - 1];
   }
+
+  size(): number {
+    return this.stack.length;
+  }
+
   isEmpty(): boolean {
-    return this.rearIndex === -1;
+    return this.stack.length === 0;
   }
 }
